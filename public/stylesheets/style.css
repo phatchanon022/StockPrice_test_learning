@@ -1,0 +1,176 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+    color:white;
+    background-color: white;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.headerSmall {
+  height: 30px;
+  background-color: rgb(15, 43, 43);;
+}
+
+.headerSmall ul {
+  list-style: none;
+  display: inline-flex;
+}
+
+.headerSmall ul li {
+  color:white;
+  margin-left: 20px;
+}
+
+.headerMain {
+  height: 170px;
+  background-color: rgb(207, 199, 199);
+  
+}
+
+.headerMain_container {
+  width:1500px;
+  margin: 0 auto;
+  display: flex;
+  
+  
+}
+
+.Logo {
+  margin-left:100px;
+
+}
+
+.search {
+  margin-top: 20px;
+  margin-left: 40px;
+}
+
+.mailContact {
+  margin-top: 10px;
+  margin-left: 150px;
+}
+
+
+
+
+* NAVIGATION */
+nav {
+  width: 80%;
+  margin: 0 auto;
+  background: #fff;
+  padding: 50px 0;
+  box-shadow: 0px 5px 0px #dedede;
+}
+nav ul {
+  list-style: none;
+  text-align: center;
+}
+nav ul li {
+  display: inline-block;
+}
+nav ul li a {
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+  color: rgb(109, 104, 104);
+  font-weight: 800;
+  text-transform: uppercase;
+  margin: 0 10px;
+}
+nav ul li a,
+nav ul li a:after,
+nav ul li a:before {
+  transition: all .5s;
+}
+nav ul li a:hover {
+  color: #555;
+}
+
+
+/* stroke */
+nav.stroke ul li a,
+nav.fill ul li a {
+  position: relative;
+}
+nav.stroke ul li a:after,
+nav.fill ul li a:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: '.';
+  color: transparent;
+  background: #aaa;
+  height: 1px;
+}
+nav.stroke ul li a:hover:after {
+  width: 100%;
+}
+
+
+
+.bodyContainer {
+  width:1200px;
+  background-color:white;
+  margin:0 auto;
+  height:auto;
+}
+
+.mostActive {
+  display: inline-flex;
+
+  margin-top: 30px;
+}
+
+
+.rightSectionActive {
+  position: absolute;
+  right: 30px;
+  width:400px;
+  height: 500px; 
+  margin-top: 160px;
+  
+}
+
+.rightSectionGainers {
+  position: absolute;
+  right: 30px;
+  width:400px;
+  height: 500px; 
+  margin-top: 350px;
+  
+}
+
+.rightSectionLosers {
+  position: absolute;
+  right: 30px;
+  width:400px;
+  height: 500px; 
+  margin-top: 160px;
+  
+}
+
+
+.mostList {
+  width:300px;
+  height:150px;
+  background-color: #555;
+  position: absolute;
+  right: 0%;
+  
+}
+
+
+
+h1.headerText {
+  font-family: "Trebuchet MS", sans-serif;
+  font-size: 5em;
+  letter-spacing: -2px;
+  border-bottom: 2px solid black;
+  text-transform: uppercase;
+ }
+
+
+

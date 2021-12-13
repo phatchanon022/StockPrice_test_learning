@@ -1,0 +1,27 @@
+<h1 class="headerText">Contact</h1>
+<form method="POST">
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Email address</label>
+    <input type="email" class="form-control" id="emailUser" name="emailUser" placeholder="name@example.com" required>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Name</label>
+    <input type="text" class="form-control" id="nameUser" name="nameUser" required>
+  </div>
+  
+  
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Message</label>
+    <textarea class="form-control" id="messageUser" name="messageUser" rows="3"  required></textarea>
+  </div>
+  <button type="submit" class="btn btn-dark">Submit</button>
+</form>
+
+
+
+<script>
+  $('form').on('submit', (e) => {
+    //e.preventDefault();
+     alert("We have received your message , Thanks !!!");
+  });
+</script>

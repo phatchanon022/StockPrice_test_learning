@@ -1,0 +1,49 @@
+
+<h1 class="headerText">My Watchlist</h1>
+
+{{#each docs}}
+
+
+
+<div class="p-3 mb-2 bg-dark text-white" style="height: 140px; margin-top:40px;">
+  
+   <div class="containerW" style="display: flex;">
+  
+  <div class="leftData">
+    
+        {{#each this}}
+          
+  <a href="chart?symbol={{this.symbol}}" style="text-decoration: none;"> <h2>{{this.symbol}}</h2> </a> 
+   <h3>{{this.price}}</h3>
+        {{/each}}
+        
+ </div>
+
+ <div class="rightData" style="text-align: center; margin-left:400px;">
+        {{#each this}}
+         {{#checkNum this.change 0}}
+   <h2 style="color: red;">{{this.change}}</h2> 
+         {{else}}
+    <h2 style="color:green;">{{this.change}}</h2> 
+          {{/checkNum}}
+   <h3>{{this.peRatio}}</h3>
+        {{/each}}
+ </div>
+    
+    {{#each this}}
+   <a class="btn btn-danger delete-movie-btn" style="width:5px; height:15px;" href="#" data-id="{{this._id}}"></a>
+    {{/each}}
+   
+ 
+</div>
+
+</div>
+
+{{/each}}
+
+<script src="/javascripts/watchlistRemove.js"></script>
+
+ 
+
+
+

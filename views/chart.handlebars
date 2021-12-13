@@ -1,0 +1,33 @@
+
+<h1 class="headerText">Chart</h1>
+
+<!-- 
+<div class="jumbotron">
+        <h1 class="display-4">{{stQ.symbol}} , {{stQ.companyName}}</h1>
+        <p class="lead">{{stQ.primaryExchange}}</p>
+        <hr class="my-4">
+        <div style="display: flex;">
+        <h1 class="display-6">{{stQ.latestPrice}}</h1><h1 class="display-6" style="color: red; margin-left:20px;">{{stQ.change}}</h1>
+        </div>
+   
+  <p class="lead">{{stQ.latestTime}}</p>
+
+  
+</div> 
+-->
+
+<input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" 
+id="symbolChart" value="{{stQ.symbol}}" style="display:none; border: none; border-color: transparent; width:65px; text-transform: uppercase;">
+<input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" 
+id="symbolwatch" value="{{symbolwatch}}" style="display:none; border: none; border-color: transparent; width:65px; text-transform: uppercase;">
+
+
+
+<div id="containerChart" class="chart"></div>
+
+
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+<script src="/javascripts/chartChartPage.js"></script>

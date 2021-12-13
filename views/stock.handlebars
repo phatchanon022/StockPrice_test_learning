@@ -1,0 +1,186 @@
+<!--
+<div class="jumbotron">
+  <h1 class="display-4">Nasdaq</h1>
+  <p class="lead">Bank Of America Corp. (NEW YORK STOCK EXCHANGE, INC.)</p>
+  <h2>1580.52 <span style="color: red;">-35</span> </h2>
+  <p class="lead">December 8 2020</p>
+  <hr class="my-4">
+  <div class="a1" style="display: flex; justify-content:space-between; width:100px;">
+  <p>Previous Close </p> <span style=" margin-top:-3px;"><p class="lead" style="">1588</p></span>
+  </div>
+  <div class="a1" style="display: flex;">
+  <p>Open</p> <span style="margin-left: 20px; margin-top:-3px;"><p class="lead" style="">1588</p></span>
+  </div>
+  <div class="a1" style="display: flex;">
+  <p>Volume</p> <span style="margin-left: 20px; margin-top:-3px;"><p class="lead" style="">1588</p></span>
+  </div>
+</div>-->
+
+<h1 class="headerText">Stock</h1>
+
+<div class="p-3 mb-2 bg-danger text-white" style="height: 140px; margin-top:40px;">
+
+  <div class="leftData">
+  <h2>{{stQ.symbol}}</h2>
+  <h3>{{stQ.companyName}}</h3>
+</div>
+  <div class="center" style="text-align: center; margin-top:-40px;">
+    <p><p>Vol {{stQ.volume}} M</p></p>
+  </div>
+  <div class="priceData" style="float:right; margin-top:-95px;">
+    <h2>{{stQ.latestPrice}}</h2>
+    <p>{{stQ.change}}<span> ({{stQ.changePercent}}%)</span></p>
+    
+    
+   
+    </div>
+ 
+</div>
+
+<form method="POST">
+<div class="card">
+    
+  <div class="card-header" style="background-color: rgb(15, 43, 43);">
+    <h6 style="color: aliceblue;">{{stpCom.symbol}}</h6>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{stpCom.symbol}}<span><p class="lead">{{stpCom.companyName}}</p></span></h5>
+    <p class="card-text">{{stpCom.description}}</p>
+    <input type="search" style="display:none; border: none; border-color: transparent; width:50px;" placeholder="Search(ค้นหาหุ้น) " aria-label="Search" name="btnSymbol"
+           id="btnSymbol"  value="{{stpCom.symbol}}">
+           <input type="search" style="display:none; border: none; border-color: transparent; width:50px;" placeholder="Search(ค้นหาหุ้น) " aria-label="Search" name="btnPrice"
+           id="btnPrice"  value="{{stQ.latestPrice}}">
+            <input type="search" style="display:none; border: none; border-color: transparent; width:50px;" placeholder="Search(ค้นหาหุ้น) " aria-label="Search" name="btnMarketcap"
+           id="btnMarketcap"  value="{{stQ.marketCap}}">
+           <input type="search" style="display:none; border: none; border-color: transparent; width:50px;" placeholder="Search(ค้นหาหุ้น) " aria-label="Search" name="btnChange"
+           id="btnChange"  value="{{stQ.change}}">
+           <input type="search" style="display:none; border: none; border-color: transparent; width:50px;" placeholder="Search(ค้นหาหุ้น) " aria-label="Search" name="btnPE"
+           id="btnPE"  value="{{stQ.peRatio}}">
+           
+  <button type="submit" class="btn btn-dark">Add to Watchlist</button>
+  </div>
+</div>
+</form>
+
+
+<div class="card">
+  <div class="card-header" style="background-color: rgb(15, 43, 43);">
+    <h6 style="color: aliceblue;">Others</h6>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title"></h5>
+    <div style="justify-content: space-between; display:flex;">
+    <p class="card-text">Exchange</p> <p class="card-text" id="asset">{{stpCom.exchange}}</p>
+    </div>
+    <div style="justify-content: space-between; display:flex;">
+    <p class="card-text">CEO</p> <p class="card-text" id="asset">{{stpCom.CEO}}</p>
+    </div>
+    <div style="justify-content: space-between; display:flex;">
+    <p class="card-text">industry</p> <p class="card-text" id="asset">{{stpCom.industry}}</p>
+    </div>
+    <div style="justify-content: space-between; display:flex;">
+    <p class="card-text">employees</p> <p class="card-text" id="asset">{{stpCom.employees}}</p>
+    </div>
+    <div style="justify-content: space-between; display:flex;">
+    <p class="card-text">country</p> <p class="card-text" id="asset">{{stpCom.country}}</p>
+    </div>
+
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+
+
+
+<!-- CashFlow -->
+<div class="card" style="margin-top: 20px;">
+  <div class="card-header" style="background-color: rgb(15, 43, 43);">
+    <h6 style="color: aliceblue;">Cash Flow</h6>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title"></h5>
+    
+      {{#checkNum stpCashFlow.cashflow.[0].capitalExpenditures 0}}
+    <div style="justify-content: space-between; display:flex;">
+    <p class="card-text">capitalExpenditures</p> <p class="card-text" id="asset" style="color:red;">{{stpCashFlow.cashflow.[0].capitalExpenditures}} </p>
+    </div>
+    {{else}}
+    <div style="justify-content: space-between; display:flex;">
+    <p class="card-text">capitalExpenditures</p> <p class="card-text" id="asset" style="color:white;">{{stpCashFlow.cashflow.[0].capitalExpenditures}} </p>
+    </div>
+    {{/checkNum}}
+
+
+
+    <div style="justify-content: space-between; display:flex;">
+    <p class="card-text">cashFlow</p> <p class="card-text" id="asset">{{stpCashFlow.cashflow.[0].cashFlow}} </p>
+    </div>
+
+    
+    {{#checkNum stpCashFlow.cashflow.[0].netBorrowings 0}}
+    <div style="justify-content: space-between; display:flex;">
+    <p class="card-text">netBorrowings</p> <p class="card-text" id="asset" style="color:red;">{{stpCashFlow.cashflow.[0].netBorrowings}} </p>
+    </div>
+    {{else}}
+    <div style="justify-content: space-between; display:flex;">
+    <p class="card-text">netBorrowings</p> <p class="card-text" id="asset" style="color:white;">{{stpCashFlow.cashflow.[0].netBorrowings}} </p>
+    </div>
+    {{/checkNum}}
+
+
+    <div style="justify-content: space-between; display:flex;">
+    <p class="card-text">netIncome</p> <p class="card-text" id="asset">{{stpCashFlow.cashflow.[0].netIncome}} </p>
+    </div>
+    <div style="justify-content: space-between; display:flex;">
+    <p class="card-text">reportDate</p> <p class="card-text" id="asset">{{stpCashFlow.cashflow.[0].reportDate}} </p>
+    </div>
+
+
+
+    <a href="https://finance.yahoo.com/quote/{{stockQuote.symbol}}/cash-flow/" class="btn btn-primary">See more CashFlow</a>
+  </div>
+</div>
+
+
+
+
+<!-- Balance Sheet -->
+
+<div class="card">
+  <div class="card-header" style="background-color: rgb(15, 43, 43);">
+ <h6 style="color: aliceblue;">Balance Sheet</h6>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title"></h5>
+     
+    <div style="justify-content: space-between; display:flex;">
+    <p class="card-text">totalAssets</p> <p class="card-text" id="asset">{{stpBalanceSheet.balancesheet.[0].totalAssets}} </p>
+    </div>
+    <div style="justify-content: space-between; display:flex;">
+    <p class="card-text">accountsPayable</p> <p class="card-text" id="asset">{{stpBalanceSheet.balancesheet.[0].accountsPayable}} </p>
+    </div>
+    <div style="justify-content: space-between; display:flex;">
+    <p class="card-text">currentAssets</p> <p class="card-text" id="asset">{{stpBalanceSheet.balancesheet.[0].currentAssets}} </p>
+    </div>
+    <div style="justify-content: space-between; display:flex;">
+    <p class="card-text">currentCash</p> <p class="card-text" id="asset">{{stpBalanceSheet.balancesheet.[0].currentCash}} </p>
+    </div>
+
+
+{{#checkNum stpBalanceSheet.balancesheet.[0].retainedEarnings 0}}
+
+    <div style="justify-content: space-between; display:flex;">
+    <p class="card-text">retainedEarnings</p> <p class="card-text" id="asset" style="color:red;">{{stpBalanceSheet.balancesheet.[0].retainedEarnings}}</p>
+    </div>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+{{else}}
+ <div style="justify-content: space-between; display:flex;">
+    <p class="card-text">retainedEarnings</p> <p class="card-text" id="asset" style="color:white;">{{stpBalanceSheet.balancesheet.[0].retainedEarnings}}</p>
+    </div>
+    <a href="https://finance.yahoo.com/quote/{{stockQuote.symbol}}/balance-sheet/" class="btn btn-primary">See More BanceSheet</a>
+  </div>
+</div>
+
+
+{{/checkNum}}
